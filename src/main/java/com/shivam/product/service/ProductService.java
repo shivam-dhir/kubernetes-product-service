@@ -47,4 +47,7 @@ public class ProductService {
                 .toList();
     }
 
+    public void deleteProduct(String name) {
+        productRepository.deleteByName(name);
+    }
 }

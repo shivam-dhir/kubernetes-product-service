@@ -29,4 +29,11 @@ public class ProductController {
         return productService.createProduct(productRequest);
     }
 
+    // @DeleteMapping expects an empty response body, i.e. nothing should be returned after deletion.
+    @DeleteMapping(value = "/delete/{name}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteProduct(@PathVariable String name) {
+        productService.deleteProduct(name);
+        //return "Product deleted successfully";
+    }
 }
